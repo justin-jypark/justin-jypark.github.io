@@ -136,9 +136,7 @@ main {
 }
 
 .hero {
-  min-height: 42vh;
   display: grid;
-  align-content: end;
   gap: 1rem;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.84), rgba(255, 248, 239, 0.7)),
@@ -157,10 +155,126 @@ main {
   line-height: 1.7;
 }
 
+.meta-grid,
+.skill-grid,
+.project-list,
+.education-grid,
+.contact-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.meta-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.skill-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.project-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.education-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.meta-card,
+.skill-card,
+.project-card,
+.edu-card,
+.certificate-card,
+.contact-card {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--surface-strong);
+  border: 1px solid var(--line);
+}
+
+.meta-card p,
+.skill-card p,
+.project-card p,
+.edu-card p,
+.certificate-card p,
+.contact-card span,
+.contact-card strong {
+  margin: 0;
+}
+
+.meta-label,
+.contact-card span {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.meta-note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .section-heading {
   display: grid;
   gap: 0.4rem;
   margin-bottom: 1rem;
+}
+
+.body-copy {
+  margin: 0;
+  max-width: 70ch;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+.timeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.timeline-item {
+  padding: 1.1rem;
+  border-radius: 1rem;
+  background: var(--surface-strong);
+  border: 1px solid var(--line);
+}
+
+.timeline-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  margin-bottom: 0.9rem;
+}
+
+.timeline-head h3,
+.skill-card h3,
+.project-card h3,
+.edu-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.timeline-head p {
+  margin: 0;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.bullet-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.bullet-list li + li {
+  margin-top: 0.35rem;
 }
 
 .placeholder-card {
@@ -169,6 +283,31 @@ main {
   background: var(--surface-strong);
   border: 1px dashed var(--line);
   color: var(--muted);
+}
+
+.contact-card {
+  display: grid;
+  gap: 0.35rem;
+  min-height: 100%;
+  color: var(--text);
+}
+
+.contact-card strong {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 1080px) {
+  .meta-grid,
+  .skill-grid,
+  .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-list,
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 760px) {
@@ -201,5 +340,15 @@ main {
   .site-nav a {
     flex: 1;
     text-align: center;
+  }
+
+  .meta-grid,
+  .skill-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-head {
+    flex-direction: column;
   }
 }
