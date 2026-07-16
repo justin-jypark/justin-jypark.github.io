@@ -12,7 +12,7 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23b45309'/%3E%3Ccircle cx='32' cy='32' r='14' fill='%23f9e2c0'/%3E%3C/svg%3E"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260716a" />
+    <link rel="stylesheet" href="./styles.css?v=20260716c" />
     <script src="./script.js?v=8762d74" defer></script>
   </head>
   <body>
@@ -273,46 +273,52 @@
           <h2 id="games-title">Worm game</h2>
         </div>
         <div class="game-shell" aria-label="Worm game area">
-          <div class="game-status" aria-live="polite">
-            <div>
-              <p class="meta-label">Score</p>
-              <strong id="score">0</strong>
+          <div class="game-layout">
+            <div class="game-stage">
+              <div class="game-canvas-wrap">
+                <canvas
+                  id="worm-canvas"
+                  width="480"
+                  height="480"
+                  aria-label="Worm game board"
+                ></canvas>
+              </div>
             </div>
-            <div>
-              <p class="meta-label">High score</p>
-              <strong id="high-score">0</strong>
+            <div class="game-sidebar">
+              <div class="game-status" aria-live="polite">
+                <div>
+                  <p class="meta-label">Score</p>
+                  <strong id="score">0</strong>
+                </div>
+                <div>
+                  <p class="meta-label">High score</p>
+                  <strong id="high-score">0</strong>
+                </div>
+                <div>
+                  <p class="meta-label">State</p>
+                  <strong id="game-state">Ready</strong>
+                </div>
+              </div>
+              <div class="game-controls">
+                <div class="game-actions">
+                  <button type="button" class="game-button" data-action="start">Start</button>
+                  <button type="button" class="game-button" data-action="pause">Pause</button>
+                  <button type="button" class="game-button" data-action="restart">Restart</button>
+                </div>
+                <div class="dpad" aria-label="Touch controls">
+                  <span></span>
+                  <button type="button" class="dir-button" data-direction="up" aria-label="Move up">↑</button>
+                  <span></span>
+                  <button type="button" class="dir-button" data-direction="left" aria-label="Move left">←</button>
+                  <button type="button" class="dir-button" data-direction="down" aria-label="Move down">↓</button>
+                  <button type="button" class="dir-button" data-direction="right" aria-label="Move right">→</button>
+                </div>
+                <p class="game-help">
+                  Arrow keys or WASD on desktop. Arrow buttons on mobile. Space pauses or resumes.
+                  The worm cannot reverse direction.
+                </p>
+              </div>
             </div>
-            <div>
-              <p class="meta-label">State</p>
-              <strong id="game-state">Ready</strong>
-            </div>
-          </div>
-          <div class="game-canvas-wrap">
-            <canvas
-              id="worm-canvas"
-              width="480"
-              height="480"
-              aria-label="Worm game board"
-            ></canvas>
-          </div>
-          <div class="game-controls">
-            <div class="game-actions">
-              <button type="button" class="game-button" data-action="start">Start / Resume</button>
-              <button type="button" class="game-button" data-action="pause">Pause</button>
-              <button type="button" class="game-button" data-action="restart">Restart</button>
-            </div>
-            <div class="dpad" aria-label="Touch controls">
-              <span></span>
-              <button type="button" class="dir-button" data-direction="up" aria-label="Move up">↑</button>
-              <span></span>
-              <button type="button" class="dir-button" data-direction="left" aria-label="Move left">←</button>
-              <button type="button" class="dir-button" data-direction="down" aria-label="Move down">↓</button>
-              <button type="button" class="dir-button" data-direction="right" aria-label="Move right">→</button>
-            </div>
-            <p class="game-help">
-              Use Arrow keys or WASD on desktop. On mobile, use the arrow buttons. Press Space to
-              pause or resume. The worm cannot reverse direction.
-            </p>
           </div>
         </div>
       </section>

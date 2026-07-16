@@ -1,14 +1,15 @@
 :root {
   color-scheme: light;
-  --bg: #eef2f6;
-  --surface: rgba(255, 255, 255, 0.86);
+  --bg: #e9eef4;
+  --surface: rgba(255, 255, 255, 0.9);
   --surface-strong: #ffffff;
   --text: #14202b;
   --muted: #5c6977;
-  --line: rgba(20, 32, 43, 0.12);
-  --accent: #355c7d;
-  --accent-soft: #dbe7f3;
-  --shadow: 0 16px 36px rgba(20, 32, 43, 0.08);
+  --line: rgba(20, 32, 43, 0.1);
+  --accent: #345b7c;
+  --accent-soft: #d9e5f1;
+  --shadow: 0 18px 40px rgba(20, 32, 43, 0.1);
+  --shadow-strong: 0 30px 70px rgba(20, 32, 43, 0.14);
 }
 
 *,
@@ -27,8 +28,22 @@ body {
   font-family: "Segoe UI", Inter, "Avenir Next", Arial, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top, rgba(53, 92, 125, 0.08) 0%, transparent 42%),
-    linear-gradient(180deg, #f7f9fb 0%, #edf2f7 100%);
+    radial-gradient(circle at top left, rgba(52, 91, 124, 0.12) 0%, transparent 28%),
+    radial-gradient(circle at 85% 0%, rgba(180, 83, 9, 0.08) 0%, transparent 24%),
+    linear-gradient(180deg, #f7f9fb 0%, #e8edf3 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(20, 32, 43, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 32, 43, 0.02) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), transparent 85%);
+  opacity: 0.6;
 }
 
 a {
@@ -138,12 +153,26 @@ main {
   border-radius: 1.5rem;
   background: var(--surface);
   box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before,
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(53, 92, 125, 0.08), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.24), transparent 22%);
+  pointer-events: none;
 }
 
 .hero {
   display: grid;
   gap: 1rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(238, 242, 246, 0.88));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(238, 242, 246, 0.88));
+  box-shadow: var(--shadow-strong);
 }
 
 .hero h2 {
@@ -304,20 +333,39 @@ main {
 
 .game-shell {
   display: grid;
+  gap: 0.9rem;
+}
+
+.game-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
   gap: 1rem;
+  align-items: start;
+}
+
+.game-stage,
+.game-sidebar {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.game-sidebar {
+  align-content: start;
 }
 
 .game-status {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .game-status > div {
-  padding: 0.85rem 0.9rem;
+  padding: 0.8rem 0.85rem;
   border-radius: 1rem;
-  background: var(--surface-strong);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 249, 251, 0.94));
   border: 1px solid var(--line);
+  box-shadow: 0 10px 24px rgba(20, 32, 43, 0.06);
 }
 
 .game-status strong {
@@ -329,12 +377,13 @@ main {
 .game-canvas-wrap {
   display: grid;
   place-items: center;
-  padding: 1rem;
-  border-radius: 1.25rem;
+  padding: 0.95rem;
+  border-radius: 1.35rem;
   background:
-    radial-gradient(circle at center, rgba(180, 83, 9, 0.08), transparent 60%),
+    radial-gradient(circle at center, rgba(52, 91, 124, 0.08), transparent 55%),
     var(--surface-strong);
   border: 1px solid var(--line);
+  box-shadow: 0 14px 28px rgba(20, 32, 43, 0.07);
 }
 
 #worm-canvas {
@@ -342,21 +391,23 @@ main {
   width: min(100%, 480px);
   height: auto;
   aspect-ratio: 1 / 1;
-  border-radius: 1rem;
+  border-radius: 1.1rem;
   background:
-    linear-gradient(135deg, rgba(23, 33, 43, 0.96), rgba(35, 45, 57, 0.96));
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    linear-gradient(135deg, rgba(17, 28, 38, 0.98), rgba(28, 39, 52, 0.98));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 18px 32px rgba(20, 32, 43, 0.18);
 }
 
 .game-controls {
   display: grid;
-  gap: 0.75rem;
+  gap: 0.7rem;
 }
 
 .game-actions,
 .dpad {
   display: grid;
-  gap: 0.75rem;
+  gap: 0.6rem;
 }
 
 .game-actions {
@@ -371,13 +422,15 @@ main {
 
 .game-button,
 .dir-button {
-  padding: 0.65rem 0.75rem;
+  padding: 0.62rem 0.72rem;
   border: 1px solid var(--line);
-  border-radius: 0.9rem;
-  background: var(--surface-strong);
+  border-radius: 0.8rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 249, 251, 0.95));
   color: var(--text);
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+  box-shadow: 0 8px 18px rgba(20, 32, 43, 0.06);
 }
 
 .game-button:hover,
@@ -388,7 +441,10 @@ main {
 .nav-toggle:focus-visible,
 .site-nav a:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.22);
+  box-shadow:
+    0 0 0 3px rgba(52, 91, 124, 0.18),
+    0 12px 20px rgba(20, 32, 43, 0.08);
+  transform: translateY(-1px);
 }
 
 .dpad {
@@ -404,7 +460,7 @@ main {
   margin: 0;
   color: var(--muted);
   line-height: 1.65;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
 }
 
 @media (max-width: 1080px) {
@@ -416,6 +472,10 @@ main {
 
   .project-list,
   .education-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .game-layout {
     grid-template-columns: 1fr;
   }
 }
@@ -463,6 +523,10 @@ main {
   .game-status,
   .game-actions {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .game-layout {
+    grid-template-columns: 1fr;
   }
 
   .dpad {
