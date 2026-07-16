@@ -12,7 +12,7 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23b45309'/%3E%3Ccircle cx='32' cy='32' r='14' fill='%23f9e2c0'/%3E%3C/svg%3E"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260716d" />
+    <link rel="stylesheet" href="./styles.css?v=20260716e" />
     <script src="./script.js?v=8762d74" defer></script>
   </head>
   <body>
@@ -73,7 +73,10 @@
       <section class="panel" id="about" aria-labelledby="about-title">
         <div class="section-heading">
           <p class="eyebrow">About</p>
-          <h2 id="about-title">Deep platform experience for Android and XR systems</h2>
+          <div class="section-title-row">
+            <img class="section-icon" src="./assets/icon-about.svg" alt="" aria-hidden="true" />
+            <h2 id="about-title">Deep platform experience for Android and XR systems</h2>
+          </div>
         </div>
         <p class="body-copy">
           I design and ship Android framework and system-service features spanning background
@@ -87,7 +90,10 @@
       <section class="panel" id="experience" aria-labelledby="experience-title">
         <div class="section-heading">
           <p class="eyebrow">Experience</p>
+          <div class="section-title-row">
+            <img class="section-icon" src="./assets/icon-experience.svg" alt="" aria-hidden="true" />
             <h2 id="experience-title">Samsung Electronics Mobile Division, Suwon, Korea</h2>
+          </div>
         </div>
         <div class="timeline">
           <article class="timeline-item">
@@ -136,7 +142,10 @@
       <section class="panel" id="skills" aria-labelledby="skills-title">
         <div class="section-heading">
           <p class="eyebrow">Skills</p>
-          <h2 id="skills-title">Technical strengths across Android, sensors, and ML</h2>
+          <div class="section-title-row">
+            <img class="section-icon" src="./assets/icon-skills.svg" alt="" aria-hidden="true" />
+            <h2 id="skills-title">Technical strengths across Android, sensors, and ML</h2>
+          </div>
         </div>
         <div class="skill-grid">
           <article class="skill-card">
@@ -166,10 +175,13 @@
         </div>
       </section>
 
-      <section class="panel" aria-labelledby="projects-title">
+      <section class="panel" id="projects" aria-labelledby="projects-title">
         <div class="section-heading">
           <p class="eyebrow">Selected Projects</p>
-          <h2 id="projects-title">Platform work translated into shipped systems</h2>
+          <div class="section-title-row">
+            <img class="section-icon" src="./assets/icon-projects.svg" alt="" aria-hidden="true" />
+            <h2 id="projects-title">Platform work translated into shipped systems</h2>
+          </div>
         </div>
         <div class="project-list">
           <article class="project-card">
@@ -194,16 +206,39 @@
       <section class="panel" id="education" aria-labelledby="education-title">
         <div class="section-heading">
           <p class="eyebrow">Education</p>
-          <h2 id="education-title">Academic background</h2>
+          <div class="section-title-row">
+            <img class="section-icon" src="./assets/icon-school.svg" alt="" aria-hidden="true" />
+            <h2 id="education-title">Academic background</h2>
+          </div>
         </div>
         <div class="education-grid">
           <article class="edu-card">
-            <h3>University of Waterloo, Canada</h3>
+            <div class="edu-card-head">
+              <span class="school-logo-chip">
+                <img
+                  class="school-logo school-logo-waterloo"
+                  src="./assets/university-of-waterloo-logo-color.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </span>
+              <h3>University of Waterloo, Canada</h3>
+            </div>
             <p>Master of Engineering, Electrical and Computer Engineering</p>
             <p class="meta-note">Specialization: Artificial Intelligence / Machine Learning</p>
           </article>
           <article class="edu-card">
-            <h3>Hongik University, Korea</h3>
+            <div class="edu-card-head">
+              <span class="school-logo-chip">
+                <img
+                  class="school-logo school-logo-hongik"
+                  src="./assets/hongik-university-logo.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </span>
+              <h3>Hongik University, Korea</h3>
+            </div>
             <p>Bachelor of Engineering, Computer Science</p>
           </article>
         </div>
@@ -212,7 +247,10 @@
       <section class="panel" id="certifications" aria-labelledby="cert-title">
         <div class="section-heading">
           <p class="eyebrow">Certifications</p>
-          <h2 id="cert-title">Professional certification</h2>
+          <div class="section-title-row">
+            <img class="section-icon" src="./assets/icon-certifications.svg" alt="" aria-hidden="true" />
+            <h2 id="cert-title">Professional certification</h2>
+          </div>
         </div>
         <div class="certificate-card">
           <p>AWS Certified Solutions Architect – Associate</p>
@@ -222,13 +260,19 @@
       <section class="panel" id="research" aria-labelledby="research-title">
         <div class="section-heading">
           <p class="eyebrow">Research Experience</p>
-          <h2 id="research-title">Selected research projects and publications</h2>
+          <div class="section-title-row">
+            <img class="section-icon" src="./assets/icon-research.svg" alt="" aria-hidden="true" />
+            <h2 id="research-title">Selected research projects and publications</h2>
+          </div>
         </div>
         <div class="timeline">
           <article class="timeline-item">
-            <div class="timeline-head">
-              <h3>“TinyML-based Classification in ECG Monitoring System”</h3>
-              <p>Sep. 2021</p>
+            <div class="timeline-head research-head">
+              <img class="research-icon" src="./assets/icon-ecg.svg" alt="" aria-hidden="true" />
+              <div>
+                <h3>“TinyML-based Classification in ECG Monitoring System”</h3>
+                <p>Sep. 2021</p>
+              </div>
             </div>
             <p class="meta-note">
               Jaehyuk Kim; Yeungwoong Kyung; Juyoung Park; Computers, Materials and Continua,
@@ -236,9 +280,12 @@
             </p>
           </article>
           <article class="timeline-item">
-            <div class="timeline-head">
-              <h3>“Mobility-aware Digital Twin Migration Scheme”</h3>
-              <p>May. 2022</p>
+            <div class="timeline-head research-head">
+              <img class="research-icon" src="./assets/icon-digital-twin.svg" alt="" aria-hidden="true" />
+              <div>
+                <h3>“Mobility-aware Digital Twin Migration Scheme”</h3>
+                <p>May. 2022</p>
+              </div>
             </div>
             <p class="meta-note">
               Yeungwoong Kyung; Juyoung Park; Youngjun Kim; TaewonSong; Asia Pacific
@@ -246,9 +293,12 @@
             </p>
           </article>
           <article class="timeline-item">
-            <div class="timeline-head">
-              <h3>“Enhancing Efficiency in Decentralized AI: A Dynamic Quantization Paradigm with Outlier Elimination”</h3>
-              <p>Sep. 2023</p>
+            <div class="timeline-head research-head">
+              <img class="research-icon" src="./assets/icon-ai-quant.svg" alt="" aria-hidden="true" />
+              <div>
+                <h3>“Enhancing Efficiency in Decentralized AI: A Dynamic Quantization Paradigm with Outlier Elimination”</h3>
+                <p>Sep. 2023</p>
+              </div>
             </div>
             <p class="meta-note">
               Juyoung Park, Hanwen Ju, Sushil Pokhrel; University of Waterloo, Deep Learning
@@ -256,9 +306,12 @@
             </p>
           </article>
           <article class="timeline-item">
-            <div class="timeline-head">
-              <h3>“Adjusting the latent space of VAE for fairness by minimizing free energy”</h3>
-              <p>Apr. 2024</p>
+            <div class="timeline-head research-head">
+              <img class="research-icon" src="./assets/icon-vae-fairness.svg" alt="" aria-hidden="true" />
+              <div>
+                <h3>“Adjusting the latent space of VAE for fairness by minimizing free energy”</h3>
+                <p>Apr. 2024</p>
+              </div>
             </div>
             <p class="meta-note">
               Juyoung Park; University of Waterloo, Master of Engineering Project.
@@ -270,7 +323,10 @@
       <section class="panel" id="games" aria-labelledby="games-title">
         <div class="section-heading">
           <p class="eyebrow">Games</p>
-          <h2 id="games-title">Worm game</h2>
+          <div class="section-title-row">
+            <img class="section-icon" src="./assets/icon-games.svg" alt="" aria-hidden="true" />
+            <h2 id="games-title">Worm game</h2>
+          </div>
         </div>
         <div class="game-shell" aria-label="Worm game area">
           <div class="game-layout">
@@ -326,7 +382,10 @@
       <section class="panel" id="contact" aria-labelledby="contact-title">
         <div class="section-heading">
           <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">Public contact details</h2>
+          <div class="section-title-row">
+            <img class="section-icon" src="./assets/icon-contact.svg" alt="" aria-hidden="true" />
+            <h2 id="contact-title">Public contact details</h2>
+          </div>
         </div>
         <div class="contact-grid">
           <a class="contact-card" href="mailto:justinjy88.park@gmail.com">

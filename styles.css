@@ -1,15 +1,15 @@
 :root {
-  color-scheme: light;
-  --bg: #e9eef4;
-  --surface: rgba(255, 255, 255, 0.9);
-  --surface-strong: #ffffff;
-  --text: #14202b;
-  --muted: #5c6977;
-  --line: rgba(20, 32, 43, 0.1);
-  --accent: #345b7c;
-  --accent-soft: #d9e5f1;
-  --shadow: 0 18px 40px rgba(20, 32, 43, 0.1);
-  --shadow-strong: 0 30px 70px rgba(20, 32, 43, 0.14);
+  color-scheme: dark;
+  --bg: #07111a;
+  --surface: rgba(9, 18, 28, 0.78);
+  --surface-strong: rgba(13, 24, 36, 0.92);
+  --text: #eef6ff;
+  --muted: #9eb5cb;
+  --line: rgba(158, 195, 224, 0.16);
+  --accent: #9ec3e0;
+  --accent-soft: rgba(52, 91, 124, 0.34);
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  --shadow-strong: 0 30px 70px rgba(0, 0, 0, 0.42);
 }
 
 *,
@@ -28,9 +28,9 @@ body {
   font-family: "Segoe UI", Inter, "Avenir Next", Arial, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(52, 91, 124, 0.12) 0%, transparent 28%),
-    radial-gradient(circle at 85% 0%, rgba(180, 83, 9, 0.08) 0%, transparent 24%),
-    linear-gradient(180deg, #f7f9fb 0%, #e8edf3 100%);
+    radial-gradient(circle at top left, rgba(52, 91, 124, 0.24) 0%, transparent 32%),
+    radial-gradient(circle at 85% 0%, rgba(158, 195, 224, 0.18) 0%, transparent 26%),
+    linear-gradient(180deg, #07111a 0%, #0a1520 50%, #0e1a28 100%);
 }
 
 body::before {
@@ -39,11 +39,11 @@ body::before {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(rgba(20, 32, 43, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(20, 32, 43, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(158, 195, 224, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(158, 195, 224, 0.04) 1px, transparent 1px);
   background-size: 36px 36px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), transparent 85%);
-  opacity: 0.6;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.48), transparent 85%);
+  opacity: 0.85;
 }
 
 a {
@@ -59,6 +59,7 @@ a {
   background: var(--surface-strong);
   border: 1px solid var(--line);
   border-radius: 999px;
+  color: var(--text);
 }
 
 .skip-link:focus {
@@ -127,7 +128,7 @@ main {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 999px;
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
   box-shadow: var(--shadow);
 }
 
@@ -155,6 +156,7 @@ main {
   box-shadow: var(--shadow);
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(18px);
 }
 
 .hero::before,
@@ -163,8 +165,8 @@ main {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at top right, rgba(53, 92, 125, 0.08), transparent 30%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.24), transparent 22%);
+    radial-gradient(circle at top right, rgba(158, 195, 224, 0.12), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 22%);
   pointer-events: none;
 }
 
@@ -245,7 +247,9 @@ main {
 .contact-card {
   padding: 1rem;
   border-radius: 1rem;
-  background: var(--surface-strong);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
+    var(--surface-strong);
   border: 1px solid var(--line);
 }
 
@@ -278,6 +282,77 @@ main {
   margin-bottom: 1rem;
 }
 
+.section-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.section-icon,
+.edu-icon,
+.research-icon {
+  flex: none;
+  display: block;
+  object-fit: contain;
+}
+
+.section-icon {
+  width: 2.1rem;
+  height: 2.1rem;
+}
+
+.edu-card-head,
+.research-head {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.edu-icon,
+.research-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.school-logo-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.25rem;
+  min-height: 2.6rem;
+  padding: 0.2rem 0.35rem;
+  border-radius: 0.7rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(20, 32, 43, 0.08);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.school-logo {
+  display: block;
+  max-width: 100%;
+  max-height: 1.4rem;
+  object-fit: contain;
+}
+
+.school-logo-waterloo {
+  width: 4rem;
+}
+
+.school-logo-hongik {
+  width: 4.75rem;
+}
+
+.edu-card-head h3,
+.research-head h3 {
+  margin: 0;
+}
+
+.research-head p {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
 .body-copy {
   margin: 0;
   max-width: 70ch;
@@ -293,7 +368,9 @@ main {
 .timeline-item {
   padding: 1.1rem;
   border-radius: 1rem;
-  background: var(--surface-strong);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
+    var(--surface-strong);
   border: 1px solid var(--line);
 }
 
@@ -319,6 +396,10 @@ main {
   white-space: nowrap;
 }
 
+.timeline-item .meta-note {
+  margin-left: 3.3rem;
+}
+
 .bullet-list {
   margin: 0;
   padding-left: 1.2rem;
@@ -333,7 +414,9 @@ main {
 .placeholder-card {
   padding: 1.25rem;
   border-radius: 1rem;
-  background: var(--surface-strong);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
+    var(--surface-strong);
   border: 1px dashed var(--line);
   color: var(--muted);
 }
@@ -382,9 +465,9 @@ main {
   padding: 0.8rem 0.85rem;
   border-radius: 1rem;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 249, 251, 0.94));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
   border: 1px solid var(--line);
-  box-shadow: 0 10px 24px rgba(20, 32, 43, 0.06);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
 }
 
 .game-status strong {
@@ -399,7 +482,7 @@ main {
   padding: 0.95rem;
   border-radius: 1.35rem;
   background:
-    radial-gradient(circle at center, rgba(52, 91, 124, 0.08), transparent 55%),
+    radial-gradient(circle at center, rgba(158, 195, 224, 0.08), transparent 55%),
     var(--surface-strong);
   border: 1px solid var(--line);
   box-shadow: 0 14px 28px rgba(20, 32, 43, 0.07);
@@ -445,7 +528,7 @@ main {
   border: 1px solid var(--line);
   border-radius: 0.8rem;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 249, 251, 0.95));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
   color: var(--text);
   cursor: pointer;
   font-size: 0.88rem;
@@ -461,8 +544,8 @@ main {
 .site-nav a:focus-visible {
   outline: none;
   box-shadow:
-    0 0 0 3px rgba(52, 91, 124, 0.18),
-    0 12px 20px rgba(20, 32, 43, 0.08);
+    0 0 0 3px rgba(158, 195, 224, 0.2),
+    0 12px 20px rgba(0, 0, 0, 0.15);
   transform: translateY(-1px);
 }
 
@@ -558,5 +641,23 @@ main {
 
   .timeline-head {
     flex-direction: column;
+  }
+
+  .section-title-row,
+  .edu-card-head,
+  .research-head {
+    align-items: flex-start;
+  }
+
+  .school-logo-chip {
+    min-width: 4rem;
+  }
+
+  .timeline-item .meta-note {
+    margin-left: 0;
+  }
+
+  .research-head p {
+    white-space: normal;
   }
 }
