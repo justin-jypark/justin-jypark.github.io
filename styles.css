@@ -171,7 +171,10 @@ main {
 .hero {
   display: grid;
   gap: 1rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(238, 242, 246, 0.88));
+  color: #f4f8fc;
+  background:
+    linear-gradient(90deg, rgba(9, 15, 22, 0.86) 0%, rgba(9, 15, 22, 0.7) 42%, rgba(9, 15, 22, 0.34) 100%),
+    url("./assets/hero-ai-network.png") center center / cover no-repeat;
   box-shadow: var(--shadow-strong);
 }
 
@@ -184,9 +187,25 @@ main {
 .hero-copy {
   margin: 0;
   max-width: 60ch;
-  color: var(--muted);
+  color: rgba(232, 240, 247, 0.88);
   line-height: 1.7;
   font-size: 1rem;
+}
+
+.hero .brand-kicker,
+.hero .eyebrow {
+  color: #9ec3e0;
+}
+
+.hero .meta-card {
+  background: rgba(10, 17, 25, 0.58);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #f5f9fd;
+  backdrop-filter: blur(12px);
+}
+
+.hero .meta-note {
+  color: rgba(217, 230, 240, 0.82);
 }
 
 .meta-grid,
