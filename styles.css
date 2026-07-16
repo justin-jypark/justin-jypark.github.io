@@ -1,14 +1,14 @@
 :root {
   color-scheme: light;
-  --bg: #f4f1ea;
-  --surface: rgba(255, 255, 255, 0.78);
+  --bg: #eef2f6;
+  --surface: rgba(255, 255, 255, 0.86);
   --surface-strong: #ffffff;
-  --text: #17212b;
-  --muted: #5f6b78;
-  --line: rgba(23, 33, 43, 0.12);
-  --accent: #b45309;
-  --accent-soft: #f9e2c0;
-  --shadow: 0 18px 50px rgba(23, 33, 43, 0.1);
+  --text: #14202b;
+  --muted: #5c6977;
+  --line: rgba(20, 32, 43, 0.12);
+  --accent: #355c7d;
+  --accent-soft: #dbe7f3;
+  --shadow: 0 16px 36px rgba(20, 32, 43, 0.08);
 }
 
 *,
@@ -24,11 +24,11 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Segoe UI", Inter, "Avenir Next", Arial, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top, #fff8ef 0%, transparent 40%),
-    linear-gradient(180deg, #f7f4ef 0%, #efe8db 100%);
+    radial-gradient(circle at top, rgba(53, 92, 125, 0.08) 0%, transparent 42%),
+    linear-gradient(180deg, #f7f9fb 0%, #edf2f7 100%);
 }
 
 a {
@@ -94,6 +94,7 @@ main {
 .section-heading h2 {
   margin: 0;
   font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .nav-toggle {
@@ -142,14 +143,13 @@ main {
 .hero {
   display: grid;
   gap: 1rem;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.84), rgba(255, 248, 239, 0.7)),
-    var(--surface);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(238, 242, 246, 0.88));
 }
 
 .hero h2 {
-  font-size: clamp(2.2rem, 5vw, 4.5rem);
-  max-width: 12ch;
+  font-size: clamp(1.75rem, 3vw, 2.85rem);
+  max-width: 15ch;
+  line-height: 1.08;
 }
 
 .hero-copy {
@@ -157,6 +157,7 @@ main {
   max-width: 60ch;
   color: var(--muted);
   line-height: 1.7;
+  font-size: 1rem;
 }
 
 .meta-grid,
@@ -313,7 +314,7 @@ main {
 }
 
 .game-status > div {
-  padding: 1rem;
+  padding: 0.85rem 0.9rem;
   border-radius: 1rem;
   background: var(--surface-strong);
   border: 1px solid var(--line);
@@ -322,7 +323,7 @@ main {
 .game-status strong {
   display: block;
   margin-top: 0.35rem;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
 }
 
 .game-canvas-wrap {
@@ -349,7 +350,7 @@ main {
 
 .game-controls {
   display: grid;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .game-actions,
@@ -370,12 +371,13 @@ main {
 
 .game-button,
 .dir-button {
-  padding: 0.9rem 1rem;
+  padding: 0.65rem 0.75rem;
   border: 1px solid var(--line);
   border-radius: 0.9rem;
   background: var(--surface-strong);
   color: var(--text);
   cursor: pointer;
+  font-size: 0.9rem;
 }
 
 .game-button:hover,
@@ -402,6 +404,7 @@ main {
   margin: 0;
   color: var(--muted);
   line-height: 1.65;
+  font-size: 0.95rem;
 }
 
 @media (max-width: 1080px) {
@@ -459,7 +462,7 @@ main {
   .contact-grid,
   .game-status,
   .game-actions {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .dpad {
