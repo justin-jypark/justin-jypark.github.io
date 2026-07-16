@@ -8,6 +8,10 @@
       name="description"
       content="Justin (Juyoung) Park's CV-based professional site covering Android OS, XR framework, sensor fusion, and real-time systems."
     />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23b45309'/%3E%3Ccircle cx='32' cy='32' r='14' fill='%23f9e2c0'/%3E%3C/svg%3E"
+    />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
   </head>
@@ -26,7 +30,7 @@
         Menu
       </button>
       <nav id="site-nav" class="site-nav" aria-label="Primary">
-        <a href="#profile">Profile</a>
+        <a href="#profile">Home</a>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
@@ -217,10 +221,50 @@
       <section class="panel" id="games" aria-labelledby="games-title">
         <div class="section-heading">
           <p class="eyebrow">Games</p>
-          <h2 id="games-title">Worm game coming next</h2>
+          <h2 id="games-title">Worm game</h2>
         </div>
-        <div class="placeholder-card">
-          <p>Games menu is reserved for the keyboard and touch worm game in the next loop.</p>
+        <div class="game-shell" aria-label="Worm game area">
+          <div class="game-status" aria-live="polite">
+            <div>
+              <p class="meta-label">Score</p>
+              <strong id="score">0</strong>
+            </div>
+            <div>
+              <p class="meta-label">High score</p>
+              <strong id="high-score">0</strong>
+            </div>
+            <div>
+              <p class="meta-label">State</p>
+              <strong id="game-state">Ready</strong>
+            </div>
+          </div>
+          <div class="game-canvas-wrap">
+            <canvas
+              id="worm-canvas"
+              width="480"
+              height="480"
+              aria-label="Worm game board"
+            ></canvas>
+          </div>
+          <div class="game-controls">
+            <div class="game-actions">
+              <button type="button" class="game-button" data-action="start">Start / Resume</button>
+              <button type="button" class="game-button" data-action="pause">Pause</button>
+              <button type="button" class="game-button" data-action="restart">Restart</button>
+            </div>
+            <div class="dpad" aria-label="Touch controls">
+              <span></span>
+              <button type="button" class="dir-button" data-direction="up">Up</button>
+              <span></span>
+              <button type="button" class="dir-button" data-direction="left">Left</button>
+              <button type="button" class="dir-button" data-direction="down">Down</button>
+              <button type="button" class="dir-button" data-direction="right">Right</button>
+            </div>
+            <p class="game-help">
+              Use Arrow keys or WASD on desktop. On mobile, use the on-screen buttons. Press Space
+              to pause or resume. The worm cannot reverse direction.
+            </p>
+          </div>
         </div>
       </section>
 

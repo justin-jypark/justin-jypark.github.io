@@ -59,6 +59,7 @@ main {
 
 .site-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
@@ -101,8 +102,11 @@ main {
 
 .site-nav {
   display: flex;
+  flex: 1 1 100%;
   gap: 1.25rem;
   align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
   padding: 0.75rem 1rem;
   background: var(--surface);
   border: 1px solid var(--line);
@@ -297,6 +301,109 @@ main {
   line-height: 1.5;
 }
 
+.game-shell {
+  display: grid;
+  gap: 1rem;
+}
+
+.game-status {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.game-status > div {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--surface-strong);
+  border: 1px solid var(--line);
+}
+
+.game-status strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 1.2rem;
+}
+
+.game-canvas-wrap {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(circle at center, rgba(180, 83, 9, 0.08), transparent 60%),
+    var(--surface-strong);
+  border: 1px solid var(--line);
+}
+
+#worm-canvas {
+  display: block;
+  width: min(100%, 480px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 1rem;
+  background:
+    linear-gradient(135deg, rgba(23, 33, 43, 0.96), rgba(35, 45, 57, 0.96));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.game-controls {
+  display: grid;
+  gap: 1rem;
+}
+
+.game-actions,
+.dpad {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.game-actions {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.game-button,
+.dir-button,
+.nav-toggle {
+  font: inherit;
+}
+
+.game-button,
+.dir-button {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: var(--surface-strong);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.game-button:hover,
+.dir-button:hover,
+.game-button:focus-visible,
+.dir-button:focus-visible,
+.nav-toggle:hover,
+.nav-toggle:focus-visible,
+.site-nav a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.22);
+}
+
+.dpad {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: stretch;
+}
+
+.dpad span {
+  display: block;
+}
+
+.game-help {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
 @media (max-width: 1080px) {
   .meta-grid,
   .skill-grid,
@@ -329,23 +436,38 @@ main {
   .site-nav {
     width: 100%;
     display: none;
-    justify-content: space-between;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
     border-radius: 1rem;
   }
 
   .site-nav.is-open {
-    display: flex;
+    display: grid;
   }
 
   .site-nav a {
-    flex: 1;
+    flex: 1 1 calc(50% - 0.25rem);
     text-align: center;
+    padding: 0.8rem 0.5rem;
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+    background: var(--surface-strong);
   }
 
   .meta-grid,
   .skill-grid,
-  .contact-grid {
+  .contact-grid,
+  .game-status,
+  .game-actions {
     grid-template-columns: 1fr;
+  }
+
+  .dpad {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dpad span {
+    display: none;
   }
 
   .timeline-head {
