@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Justin Park | Professional Profile</title>
+    <meta
+      name="description"
+      content="A responsive professional profile site with a future games area."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div>
+          <p class="brand-kicker">Professional Profile</p>
+          <h1>Justin Park</h1>
+        </div>
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        Menu
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="#profile">Profile</a>
+        <a href="#games">Games</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="profile">
+        <p class="eyebrow">Responsive personal website</p>
+        <h2>Clean, modern, and ready for profile content.</h2>
+        <p class="hero-copy">
+          This first loop establishes the structure, navigation, and layout scaffolding for the
+          CV-driven site.
+        </p>
+      </section>
+
+      <section class="panel" id="games" aria-labelledby="games-title">
+        <div class="section-heading">
+          <p class="eyebrow">Games</p>
+          <h2 id="games-title">Games area ready for the worm game</h2>
+        </div>
+        <div class="placeholder-card">
+          <p>Game implementation will be added in a later loop.</p>
+        </div>
+      </section>
+
+      <section class="panel" id="contact" aria-labelledby="contact-title">
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Contact details will be restored from the CV.</h2>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
