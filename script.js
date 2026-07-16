@@ -257,7 +257,27 @@
 
     ctx.fillStyle = color;
     ctx.beginPath();
-    ctx.roundRect(px + 1.5, py + 1.5, size - 3, size - 3, radius);
+    const inset = 1.5;
+    const cellSize = size - inset * 2;
+    const r = Math.max(0, Math.min(radius, cellSize / 2));
+    const left = px + inset;
+    const top = py + inset;
+    const right = left + cellSize;
+    const bottom = top + cellSize;
+
+    if (typeof ctx.roundRect === "function") {
+      ctx.roundRect(left, top, cellSize, cellSize, r);
+    } else {
+      ctx.moveTo(left + r, top);
+      ctx.lineTo(right - r, top);
+      ctx.arcTo(right, top, right, top + r, r);
+      ctx.lineTo(right, bottom - r);
+      ctx.arcTo(right, bottom, right - r, bottom, r);
+      ctx.lineTo(left + r, bottom);
+      ctx.arcTo(left, bottom, left, bottom - r, r);
+      ctx.lineTo(left, top + r);
+      ctx.arcTo(left, top, left + r, top, r);
+    }
     ctx.fill();
   }
 
